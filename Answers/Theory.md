@@ -26,5 +26,14 @@ both `antelope` and `antelopes`.)
   #### 1999-1-20
   #### 1999-01-20
   #### 812-2-10
-  
+
   `/\d{1,4}-\d{1,2}-\d{1,2}/g`
+
+  ## VT-100 Terminal
+
+  * Come up with regexes for the two above sequences. The one to set the
+    cursor position should accept any digits for the row and column. The
+    bold sequence need only accept `1` (and is a trivial regex). (ESC is
+    a single character which can be represented with `\e` in the regex.)
+
+    `/\e\[(1m)?(\d{1,2};\d{1,2}f)?/gi ` 
